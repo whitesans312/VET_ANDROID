@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DogApp</string>
+    <string name="dog_head_description">Ilustración de la cabeza de un perro</string>
+    <string name="fingerprint_description">Icono de huella digital</string>
+</resources>
