@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Solo para builds de debug: abre el Home directamente para revisar el listado
+    sin depender del login ni de la navegacion (que son de otras subtareas).
+    No entra al APK de release.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".HomePreviewActivity"
+            android:exported="true"
+            android:label="Home Admin Citas (debug)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".DetallePreviewActivity"
+            android:exported="true"
+            android:label="Detalle Cita (debug)">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
