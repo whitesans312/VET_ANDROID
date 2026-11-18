@@ -4,4 +4,5 @@
     <string name="fingerprint_description">Icono de huella digital</string>
     <string name="item_cita_avatar_description">Foto de la mascota</string>
     <string name="home_turno">Turno #%1$d</string>
+    <string name="home_vacio">Aún no hay citas registradas</string>
 </resources>
