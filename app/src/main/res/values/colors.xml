@@ -4,7 +4,8 @@
     <color name="dog_cream">#F4E7D2</color>
     <color name="dog_ear">#C78E62</color>
     <color name="dog_nose">#38302D</color>
-    <color name="fingerprint_color">#F4E7D2</color>
+    <color name="fingerprint_color">#61CECA</color>
+    <color name="login_fingerprint">#85D9D5</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

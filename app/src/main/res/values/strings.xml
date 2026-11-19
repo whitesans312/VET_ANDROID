@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">DogApp</string>
+    <string name="app_name">dogApp</string>
+    <string name="login_title">DogApp</string>
+    <string name="login_fingerprint_hint">Toca la huella para ingresar</string>
+    <string name="login_biometric_title">Autenticación con Biometría</string>
+    <string name="login_biometric_subtitle">Ingrese su huella digital</string>
+    <string name="login_biometric_cancel">Cancelar</string>
+    <string name="login_biometric_not_enrolled">Registra una huella digital en los ajustes del dispositivo.</string>
+    <string name="login_biometric_no_hardware">Este dispositivo no tiene lector biométrico.</string>
+    <string name="login_biometric_hardware_unavailable">El lector de huellas no está disponible. Inténtalo de nuevo.</string>
+    <string name="login_biometric_unavailable">No se puede iniciar la autenticación biométrica en este momento.</string>
+    <string name="home_title">Administrador de Citas</string>
     <string name="dog_head_description">Ilustración de la cabeza de un perro</string>
     <string name="fingerprint_description">Icono de huella digital</string>
     <string name="item_cita_avatar_description">Foto de la mascota</string>
