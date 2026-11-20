@@ -19,4 +19,15 @@
         android:id="@+id/homeFragment"
         android:name="com.example.dogapp.view.home.HomeFragment"
         android:label="@string/home_title" />
+
+    <fragment
+        android:id="@+id/detalleCitaFragment"
+        android:name="com.example.dogapp.view.detalle.DetalleCitaFragment"
+        android:label="Detalle Cita" />
+
+    <fragment
+        android:id="@+id/editarCitaFragment"
+        android:name="com.example.dogapp.view.editarcita.EditarCitaFragment"
+        android:label="Editar Cita" />
+
 </navigation>

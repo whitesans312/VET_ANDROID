@@ -34,7 +34,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private val adapter = CitaAdapter { cita ->
-        // TODO: navegar al detalle de la cita (fuera de esta subtarea).
+        val bundle = androidx.core.os.bundleOf("citaId" to cita.id)
+        try {
+            // Flujo oficial con Navigation Component (MainActivity)
+            androidx.navigation.fragment.NavHostFragment.findNavController(this)
+                .navigate(R.id.detalleCitaFragment, bundle)
+        } catch (_: Exception) {
+            // Respaldo para HomePreviewActivity
+            val containerId = (requireView().parent as? android.view.View)?.id ?: return@CitaAdapter
+            parentFragmentManager.beginTransaction()
+                .replace(containerId, com.example.dogapp.view.detalle.DetalleCitaFragment.newInstance(cita.id))
+                .addToBackStack(null)
+                .commit()
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -6,4 +6,9 @@
     </style>
 
     <style name="Theme.DogApp" parent="Base.Theme.DogApp" />
+    <!--  HU 4.0: esquinas redondeadas de la foto dentro de la tarjeta de imagen.  -->
+    <style name="ShapeAppearance.DogApp.ImagenDetalle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
 </resources>
