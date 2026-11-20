@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Copia accidental del proyecto (ZIP de GitHub)
+/VET_ANDROID-main/
