@@ -11,6 +11,11 @@
             android:name=".HomePreviewActivity"
             android:exported="true"
             android:label="Home Admin Citas (debug)" />
+
+        <activity
+            android:name=".DetallePreviewActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>

@@ -3,21 +3,17 @@ package com.example.dogapp
 import android.os.Bundle
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import com.example.dogapp.data.local.database.DatabaseProvider
 import com.example.dogapp.data.local.entity.CitaEntity
+import com.example.dogapp.view.detalle.DetalleCitaNavegacion
+import com.example.dogapp.view.editarcita.EditarCitaFragment
 import com.example.dogapp.view.home.HomeFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-/**
- * Atajo SOLO de debug para revisar la HU 2.0 (Home Administrador de Citas).
- *
- * Abre el Home de una vez y, si la tabla esta vacia, siembra tres citas de ejemplo
- * para ver el RecyclerView con datos. Sirve para las capturas de evidencia mientras
- * el login y la navegacion siguen en manos de otras subtareas.
- */
-class HomePreviewActivity : AppCompatActivity() {
+class HomePreviewActivity : AppCompatActivity(), DetalleCitaNavegacion {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +33,20 @@ class HomePreviewActivity : AppCompatActivity() {
                 .commit()
             sembrarCitasDeEjemplo()
         }
+    }
+
+    override fun volverAlHome() {
+        supportFragmentManager.popBackStack()
+    }
+
+    override fun irAEditarCita(citaId: Long) {
+        val fragmentoEditar = EditarCitaFragment().apply {
+            arguments = bundleOf("citaId" to citaId)
+        }
+        supportFragmentManager.beginTransaction()
+            .replace(ID_CONTENEDOR, fragmentoEditar)
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun sembrarCitasDeEjemplo() {

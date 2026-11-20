@@ -15,4 +15,23 @@
     <string name="item_cita_avatar_description">Foto de la mascota</string>
     <string name="home_turno">Turno #%1$d</string>
     <string name="home_vacio">Aún no hay citas registradas</string>
+    <string name="editar_titulo">Editar Cita</string>
+    <string name="editar_nombre_mascota">Nombre de la Mascota</string>
+    <string name="editar_raza">Raza</string>
+    <string name="editar_nombre_propietario">Nombre del Propietario</string>
+    <string name="editar_telefono">Teléfono</string>
+    <string name="editar_boton">Editar Cita</string>
+    <string name="editar_error_nombre">Ingrese el nombre de la mascota</string>
+    <string name="editar_error_raza">Seleccione una raza</string>
+    <string name="editar_error_propietario">Ingrese el nombre del propietario</string>
+    <string name="editar_error_telefono">Ingrese un teléfono válido de 10 dígitos</string>
+    <string name="editar_exito">La cita se actualizó correctamente</string>
+    <string name="editar_error_general">No fue posible actualizar la cita</string>
+    <string name="editar_imagen_description">Imagen de la raza seleccionada</string>
+    <string name="detalle_volver_description">Volver al listado de citas</string>
+    <string name="detalle_eliminar_description">Eliminar cita</string>
+    <string name="detalle_editar_description">Editar cita</string>
+    <string name="detalle_propietario">Propietario</string>
+    <string name="detalle_telefono">Teléfono</string>
+    <string name="detalle_no_encontrada">No se encontró la cita</string>
 </resources>

@@ -8,4 +8,11 @@
     <color name="login_fingerprint">#85D9D5</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="detalle_rosa">#F06292</color>
+    <color name="detalle_azul_oscuro">#1A2B5F</color>
+    <color name="detalle_texto_secundario">#6B6B6B</color>
+    <color name="editar_rosa">#F05861</color>
+    <color name="editar_rosa_deshabilitado">#F7A8AD</color>
+    <color name="blanco">#FFFFFF</color>
+
 </resources>
