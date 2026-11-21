@@ -64,4 +64,7 @@ class CitaRepository(
         return respuesta.body()?.message
             ?: throw Exception("La API no devolvió una imagen")
     }
+    suspend fun insertarCita(cita: CitaEntity): Long {
+        return citaDao.insertar(cita)
+    }
 }

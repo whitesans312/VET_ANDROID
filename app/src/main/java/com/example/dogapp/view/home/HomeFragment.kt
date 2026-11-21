@@ -11,6 +11,7 @@ import com.example.dogapp.adapter.CitaAdapter
 import com.example.dogapp.data.local.database.DatabaseProvider
 import com.example.dogapp.databinding.FragmentHomeBinding
 import com.example.dogapp.viewmodel.HomeViewModel
+import androidx.navigation.fragment.findNavController
 
 /**
  * HU 2.0 - Home Administrador de Citas (contenedor minimo).
@@ -59,6 +60,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewModel.citas.observe(viewLifecycleOwner) { citas ->
             adapter.submitList(citas)
             binding.tvVacio.isVisible = citas.isEmpty()
+
+        }
+        // Evento temporal para pruebas de HU 3: Navegar a Nueva Cita
+        binding.fabNuevaCita.setOnClickListener {
+            findNavController().navigate(R.id.nuevaCitaFragment)
         }
     }
 
