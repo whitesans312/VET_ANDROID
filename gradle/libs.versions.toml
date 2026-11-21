@@ -1,5 +1,5 @@
 [versions]
-agp = "9.5.0-alpha06"
+agp = "9.5.2"
 coreKtx = "1.19.1"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -19,6 +19,7 @@ archCoreTesting = "2.2.0"
 navigation = "2.10.2"
 biometric = "1.4.0-rc01"
 lottie = "6.7.1"
+retrofit = "2.11.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,6 +43,8 @@ androidx-arch-core-testing = { group = "androidx.arch.core", name = "core-testin
 androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 androidx-biometric = { group = "androidx.biometric", name = "biometric", version.ref = "biometric" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
