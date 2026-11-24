@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    HU 2.0 - Pantalla Home (contenedor minimo).
-    Aqui solo vive lo necesario para hospedar el RecyclerView del listado de citas.
-    El header curvo con titulo, perro y marca NO esta incluido: es la subtarea de
-    Santos y se agrega arriba de este contenido sin tocar el Adapter ni el ViewModel.
-    El boton atras del telefono (finishAffinity) corresponde a la subtarea de Agudelo.
+    HU 2.0 - Pantalla Home Administrador de Citas.
+    Incluye header curvo (Criterio 2) + RecyclerView de citas.
+    Back button del teléfono → finishAffinity() (Criterio 1) se maneja en HomeFragment.
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,7 +12,15 @@
     android:background="@android:color/white"
     tools:context=".view.home.HomeFragment">
 
-    <!-- TODO(Santos): header curvo con titulo, perro y marca. -->
+    <!-- Header curvo: gris oscuro, esquina inf-izq curva, título + perro+DogApp -->
+    <include
+        android:id="@+id/headerHome"
+        layout="@layout/header_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCitas"
@@ -27,16 +33,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerHome"
         tools:listitem="@layout/item_cita" />
 
-    <!-- Botón flotante temporal para pruebas de HU 3 (Navegación a Nueva Cita) -->
+    <!-- Botón flotante Nueva Cita (HU 3.0 Criterio 4) -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabNuevaCita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:contentDescription="Nueva Cita"
+        android:contentDescription="@string/home_fab_nueva_cita"
         app:backgroundTint="#F05861"
         app:srcCompat="@android:drawable/ic_input_add"
         app:tint="@android:color/white"
@@ -58,5 +64,4 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="visible" />
 
-    <!-- TODO(Santos, Agudelo): boton flotante de nueva cita y navegacion al detalle. -->
 </androidx.constraintlayout.widget.ConstraintLayout>

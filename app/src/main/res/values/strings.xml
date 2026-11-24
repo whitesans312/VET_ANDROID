@@ -10,6 +10,8 @@
     <string name="login_biometric_hardware_unavailable">El lector de huellas no está disponible. Inténtalo de nuevo.</string>
     <string name="login_biometric_unavailable">No se puede iniciar la autenticación biométrica en este momento.</string>
     <string name="home_title">Administrador de Citas</string>
+    <string name="home_titulo">Administrador de Citas</string>
+    <string name="home_fab_nueva_cita">Nueva Cita</string>
     <string name="dog_head_description">Ilustración de la cabeza de un perro</string>
     <string name="fingerprint_description">Icono de huella digital</string>
     <string name="item_cita_avatar_description">Foto de la mascota</string>

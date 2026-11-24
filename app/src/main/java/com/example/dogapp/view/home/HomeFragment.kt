@@ -11,19 +11,17 @@ import com.example.dogapp.adapter.CitaAdapter
 import com.example.dogapp.data.local.database.DatabaseProvider
 import com.example.dogapp.databinding.FragmentHomeBinding
 import com.example.dogapp.viewmodel.HomeViewModel
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 
 /**
- * HU 2.0 - Home Administrador de Citas (contenedor minimo).
+ * HU 2.0 - Home Administrador de Citas.
  *
- * Une las dos subtareas de Medina: el CitaAdapter pinta la lista y el HomeViewModel
- * entrega el LiveData que viene de Room. El estado vacio se muestra cuando la tabla
- * no tiene filas.
- *
- * Pendiente de otras subtareas de la misma HU (no se tocan aqui):
- *  - header curvo con titulo, perro y marca            -> Santos
- *  - boton atras del Home -> finishAffinity()          -> Agudelo
- *  - boton flotante de nueva cita y navegacion al detalle
+ * - Header curvo con título, perro y marca (Criterio 2) → layout/header_home.xml
+ * - Back button del teléfono → finishAffinity() (Criterio 1)
+ * - FAB rosa → Nueva Cita (HU 3.0)
+ * - Click item → Detalle Cita (HU 4.0)
+ * - Lista desde Room via HomeViewModel + CitaAdapter
  */
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -50,6 +48,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // Criterio 1: Back button del teléfono → finishAffinity() (va al escritorio, no al login)
+        requireActivity().onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                requireActivity().finishAffinity()
+            }
+        })
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHomeBinding.bind(view)
@@ -60,9 +68,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewModel.citas.observe(viewLifecycleOwner) { citas ->
             adapter.submitList(citas)
             binding.tvVacio.isVisible = citas.isEmpty()
-
         }
-        // Evento temporal para pruebas de HU 3: Navegar a Nueva Cita
+
+        // FAB Nueva Cita → HU 3.0
         binding.fabNuevaCita.setOnClickListener {
             findNavController().navigate(R.id.nuevaCitaFragment)
         }

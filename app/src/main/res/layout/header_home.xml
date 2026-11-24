@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    HU 2.0 - Header curvo Home Administrador de Citas.
+    Criterio 2: Fondo gris oscuro, esquina inferior izquierda curvada.
+    Título "Administrador de Citas" blanco bold izquierda.
+    Perro + "DogApp" derecha.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/headerHome"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_header_home"
+    android:paddingTop="8dp"
+    android:paddingBottom="24dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <!-- Título "Administrador de Citas" blanco bold, izquierda, centrado verticalmente -->
+    <TextView
+        android:id="@+id/tvTituloHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/fredoka_bold"
+        android:includeFontPadding="false"
+        android:text="@string/home_titulo"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Contenedor perro + DogApp a la derecha -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contenedorMarca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Imagen perro (misma que login) -->
+        <ImageView
+            android:id="@+id/ivDogHeadHome"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:contentDescription="@string/dog_head_description"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_dog_head"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Texto "DogApp" debajo de la imagen -->
+        <TextView
+            android:id="@+id/tvDogAppHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/fredoka_bold"
+            android:includeFontPadding="false"
+            android:text="@string/login_title"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivDogHeadHome" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
